@@ -378,11 +378,11 @@ ul {
     max-width: 700px;
 }
 
-/* Gallery - 2x2 grid layout (matches original) */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+/* Gallery - single column stacked images */
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .gallery-image {
@@ -396,10 +396,6 @@ ul {
 
 .gallery-image:hover {
     opacity: 0.85;
-}
-
-.arcade-showcase {
-    background-color: var(--bg-secondary);
 }
 
 /* ================================
