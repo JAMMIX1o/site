@@ -87,15 +87,46 @@ ul {
 }
 
 /* ================================
+   Split-Screen Layout (Desktop)
+   Fixed PCB image on right, scrollable content on left
+   ================================ */
+.fixed-image-panel {
+    position: fixed;
+    top: calc(var(--header-height) + 7px); /* Below header + border */
+    right: 0;
+    width: 50%;
+    height: calc(100vh - var(--header-height) - 7px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 40px;
+    z-index: 50;
+    pointer-events: none;
+    background-color: var(--bg-hero);
+}
+
+.fixed-image-panel .product-image {
+    max-width: 556px;
+    width: 90%;
+    height: auto;
+}
+
+.scroll-content {
+    width: 50%;
+    min-height: calc(100vh - var(--header-height) - 7px);
+}
+
+/* ================================
    Header (55px height, dark logo)
    ================================ */
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100; /* Above fixed-image-panel (z-index: 50) */
     background-color: var(--accent-coral);
     border-bottom: 7px solid var(--accent-pink);
     height: var(--header-height);
+    width: 100%;
 }
 
 .header-container {
@@ -234,6 +265,12 @@ ul {
 
 .compatibility-badge {
     max-width: 280px;
+}
+
+/* Mobile product image - hidden on desktop (shown via fixed panel) */
+.mobile-product-image {
+    display: none;
+    margin-top: 24px;
 }
 
 .hero-image {
@@ -448,6 +485,24 @@ ul {
 /* ================================
    Responsive Design
    ================================ */
+
+/* Tablet: Collapse split-screen layout */
+@media (max-width: 1200px) {
+    .fixed-image-panel {
+        display: none; /* Hide fixed panel on smaller screens */
+    }
+
+    .scroll-content {
+        width: 100%; /* Full width when no fixed panel */
+    }
+
+    .mobile-product-image {
+        display: block; /* Show product image inline on mobile */
+        max-width: 400px;
+        width: 100%;
+    }
+}
+
 @media (max-width: 1024px) {
     .gallery-grid {
         grid-template-columns: repeat(2, 1fr);
