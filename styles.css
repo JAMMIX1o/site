@@ -136,7 +136,7 @@ ul {
     margin: 0;
     padding: 0 20px 0 40px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end; /* Align nav to right since no logo */
     align-items: center;
 }
 
@@ -226,14 +226,14 @@ ul {
     max-width: 420px;
 }
 
-/* Hero title - Gotham Womans stencil font, gray color */
+/* Hero title - Gotham Womans stencil font, CORAL color (matches original) */
 .hero-title {
     font-family: var(--font-hero);
     font-size: 120px;
     font-weight: 400;
     line-height: 0.9;
     margin-bottom: 8px;
-    color: var(--text-gray);
+    color: var(--accent-coral);
     letter-spacing: normal;
 }
 
@@ -275,6 +275,21 @@ ul {
 
 .compatibility-badge {
     max-width: 280px;
+}
+
+/* "for MiSTer" badge container */
+.mister-badge-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.mister-for {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 400;
+    color: var(--text-primary);
 }
 
 /* Mobile product image - hidden on desktop (shown via fixed panel) */
@@ -363,10 +378,10 @@ ul {
     max-width: 700px;
 }
 
-/* Gallery - single column vertical stack */
+/* Gallery - 2x2 grid layout (matches original) */
 .gallery-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 15px;
 }
 
@@ -430,15 +445,17 @@ ul {
     max-width: var(--container-width);
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
 }
 
 .footer-logo {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text-muted);
+    font-family: var(--font-hero);
+    font-size: 97px;
+    font-weight: 400;
+    color: var(--accent-coral);
+    margin: 0;
+    line-height: 1;
 }
 
 .social-link {
