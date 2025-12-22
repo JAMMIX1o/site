@@ -93,8 +93,8 @@ ul {
 .fixed-image-panel {
     position: fixed;
     top: calc(var(--header-height) + 7px); /* Below header + border */
-    right: 0;
-    width: 50%;
+    right: 10%; /* 10% margin from right edge */
+    width: 40%; /* 40% of viewport */
     height: calc(100vh - var(--header-height) - 7px);
     display: flex;
     align-items: flex-start;
@@ -112,9 +112,9 @@ ul {
 }
 
 .scroll-content {
-    width: 50%;
+    margin-left: 10%; /* 10% margin from left edge */
+    width: 40%; /* 40% of viewport */
     min-height: calc(100vh - var(--header-height) - 7px);
-    padding-left: 40px;
 }
 
 /* ================================
@@ -131,10 +131,10 @@ ul {
 }
 
 .header-container {
-    width: 50%;
+    margin-left: 10%; /* Align with content column */
+    width: 40%; /* Match content column width */
     height: 100%;
-    margin: 0;
-    padding: 0 20px 0 40px;
+    padding: 0 20px 0 0;
     display: flex;
     justify-content: flex-end; /* Align nav to right since no logo */
     align-items: center;
@@ -512,19 +512,21 @@ ul {
    Responsive Design
    ================================ */
 
-/* Tablet: Collapse split-screen layout */
+/* Tablet: Collapse to single column, drop margins */
 @media (max-width: 1200px) {
     .fixed-image-panel {
         display: none; /* Hide fixed panel on smaller screens */
     }
 
     .scroll-content {
-        width: 100%; /* Full width when no fixed panel */
-        padding-left: 0; /* Remove left padding on mobile */
+        margin-left: 0; /* Drop left margin */
+        width: 100%; /* Full width single column */
+        padding: 0 20px; /* Just some padding for breathing room */
     }
 
     .header-container {
-        width: 100%; /* Full width header on mobile */
+        margin-left: 0; /* Drop left margin */
+        width: 100%; /* Full width header */
         padding: 0 20px;
     }
 
