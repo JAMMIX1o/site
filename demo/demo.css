@@ -1,0 +1,397 @@
+/* JAMMIX Demo - Clean Layout Implementation
+   Based on original site analysis */
+
+/* ============================================
+   Variables
+   ============================================ */
+:root {
+    --coral: #EC7969;
+    --pink: #F26687;
+    --dark: #1D1D1D;
+    --dark-alt: #262626;
+    --white: #FFFFFF;
+    --gray: #ADADAD;
+    --header-height: 55px;
+    --border-height: 7px;
+    --content-width: 980px;
+}
+
+/* ============================================
+   Reset
+   ============================================ */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Questrial', sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--white);
+    background-color: var(--dark);
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background: var(--coral);
+    border-bottom: var(--border-height) solid var(--pink);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-link {
+    font-size: 14px;
+    color: var(--dark);
+    transition: opacity 0.2s;
+}
+
+.nav-link:hover {
+    opacity: 0.7;
+}
+
+.nav-btn {
+    font-family: 'Oswald', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 8px 16px;
+    background: var(--dark);
+    color: var(--white);
+    transition: opacity 0.2s;
+}
+
+.nav-btn:hover {
+    opacity: 0.8;
+}
+
+.nav-icon {
+    color: var(--dark);
+    display: flex;
+    transition: opacity 0.2s;
+}
+
+.nav-icon:hover {
+    opacity: 0.7;
+}
+
+/* ============================================
+   MAIN LAYOUT - Split Pane
+   ============================================ */
+.main {
+    display: flex;
+    min-height: 100vh;
+    padding-top: calc(var(--header-height) + var(--border-height));
+}
+
+/* Left Pane - Scrollable Content */
+.left-pane {
+    width: 50%;
+    padding: 40px;
+    padding-left: calc(10% + 20px); /* 10% buffer + some padding */
+    background: var(--dark-alt);
+}
+
+/* Right Pane - Fixed PCB */
+.right-pane {
+    position: fixed;
+    top: calc(var(--header-height) + var(--border-height));
+    right: 0;
+    width: 50%;
+    height: calc(100vh - var(--header-height) - var(--border-height));
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 40px;
+    background: var(--dark-alt);
+}
+
+.pcb-image {
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Mobile PCB - Hidden on desktop */
+.mobile-pcb {
+    display: none;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+    margin-bottom: 30px;
+}
+
+.hero-title {
+    font-family: 'Gotham Womans', 'Oswald', sans-serif;
+    font-size: clamp(80px, 12vw, 152px);
+    font-weight: 200;
+    line-height: 0.9;
+    color: var(--coral);
+    margin-bottom: 10px;
+}
+
+.hero-tagline {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(28px, 5vw, 55px);
+    font-weight: 700;
+    color: var(--coral);
+    line-height: 1.1;
+}
+
+.hero-platforms {
+    margin-bottom: 15px;
+}
+
+.hero-platforms li {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(36px, 6vw, 74px);
+    font-weight: 400;
+    line-height: 1.0;
+}
+
+.hero-desc {
+    color: var(--white);
+    margin-bottom: 15px;
+    max-width: 350px;
+}
+
+.mister-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.mister-badge span {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+}
+
+.mister-badge img {
+    max-width: 200px;
+}
+
+/* ============================================
+   FEATURES
+   ============================================ */
+.features {
+    margin-bottom: 40px;
+}
+
+.features-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.features-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+}
+
+/* ============================================
+   GALLERY
+   ============================================ */
+.gallery {
+    margin-bottom: 40px;
+}
+
+.gallery-intro {
+    color: var(--gray);
+    margin-bottom: 20px;
+    max-width: 400px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.gallery-img {
+    width: 100%;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.gallery-img:hover {
+    opacity: 0.85;
+}
+
+.gallery-alt {
+    background: var(--dark);
+    margin-left: -40px;
+    margin-right: -40px;
+    padding: 30px 40px;
+}
+
+/* ============================================
+   NOTES
+   ============================================ */
+.notes {
+    margin-bottom: 60px;
+}
+
+.notes-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 6px;
+    color: var(--gray);
+}
+
+.notes-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--coral);
+}
+
+/* ============================================
+   FOOTER LOGO
+   ============================================ */
+.footer-logo {
+    font-family: 'Gotham Womans', 'Oswald', sans-serif;
+    font-size: clamp(60px, 10vw, 97px);
+    font-weight: 200;
+    color: var(--coral);
+    text-align: center;
+    padding: 40px 0;
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+    /* Hide fixed right pane */
+    .right-pane {
+        display: none;
+    }
+
+    /* Full width left pane */
+    .left-pane {
+        width: 100%;
+        padding: 30px 20px;
+    }
+
+    /* Show mobile PCB */
+    .mobile-pcb {
+        display: block;
+        position: fixed;
+        top: calc(var(--header-height) + var(--border-height) + 20px);
+        right: -30%;
+        width: 60%;
+        max-width: 350px;
+        z-index: 10;
+        pointer-events: none;
+        opacity: 0.9;
+    }
+
+    /* Adjust hero for overlap */
+    .hero {
+        position: relative;
+        z-index: 20;
+    }
+
+    .hero-title {
+        font-size: 80px;
+    }
+
+    .hero-tagline {
+        font-size: 32px;
+    }
+
+    .hero-platforms li {
+        font-size: 48px;
+    }
+
+    /* Single column gallery */
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-alt {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-nav {
+        gap: 12px;
+    }
+
+    .nav-link {
+        font-size: 12px;
+    }
+
+    .nav-btn {
+        font-size: 11px;
+        padding: 6px 10px;
+    }
+
+    .mobile-pcb {
+        right: -40%;
+        width: 70%;
+    }
+
+    .hero-title {
+        font-size: 60px;
+    }
+
+    .footer-logo {
+        font-size: 50px;
+    }
+}
+
+/* ============================================
+   Load custom font if available
+   ============================================ */
+@font-face {
+    font-family: 'Gotham Womans';
+    src: url('../fonts/gotham-womans.woff2') format('woff2'),
+         url('../fonts/gotham-womans.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
