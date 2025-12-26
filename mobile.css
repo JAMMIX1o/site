@@ -72,20 +72,39 @@ ul {
 .site-header {
     background: var(--coral);
     border-bottom: 5px solid var(--pink);
+    height: auto;
+}
+
+.header-container {
+    max-width: 1240px;
+    margin: 0 auto;
     padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
 }
 
 .header-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 12px;
 }
 
+.header-nav .nav-col {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
 .nav-link {
-    font-family: var(--font-ui);
-    font-size: 14px;
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
     color: var(--bg-dark);
+    text-decoration: underline;
 }
 
 .btn-primary {
@@ -94,9 +113,12 @@ ul {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    padding: 10px 20px;
+    padding: 8px 16px;
+    height: 32px;
     background: var(--bg-dark);
     color: var(--text-white);
+    display: flex;
+    align-items: center;
 }
 
 .social-link {
@@ -145,6 +167,7 @@ ul {
     min-height: 53px; /* Prevent layout shift during animation */
 }
 
+.hero-platforms .platform-line,
 .hero-platforms .platform-text {
     font-family: var(--font-heading);
     font-size: 48px;
@@ -156,6 +179,7 @@ ul {
     transition: opacity 0.4s ease-in-out;
 }
 
+.hero-platforms .platform-line.fade-out,
 .hero-platforms .platform-text.fade-out {
     opacity: 0;
 }
@@ -342,6 +366,7 @@ ul {
         font-size: 24px;
     }
 
+    .hero-platforms .platform-line,
     .hero-platforms .platform-text {
         font-size: 36px;
     }

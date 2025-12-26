@@ -3,6 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Mobile redirect (for GitHub Pages - no server-side routing) -->
+    <script>
+    if (/mobile|android|iphone|ipad/i.test(navigator.userAgent) && !location.pathname.includes('mobile')) {
+        location.replace('/mobile.html');
+    }
+    </script>
     <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex">
     <title>JAMMIX - IO Board for MiSTer FPGA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">

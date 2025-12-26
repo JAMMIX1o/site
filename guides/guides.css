@@ -18,10 +18,9 @@
     text-align: center;
 }
 
-/* Active nav link state */
-.nav-link--active {
-    color: var(--text-dark) !important;
-    font-weight: 500;
+.guides-page .nav-col-guide .nav-link {
+    color: var(--text-dark);
+    font-weight: 600;
 }
 
 /* Documentation Section */

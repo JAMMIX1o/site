@@ -172,7 +172,7 @@ ul {
     font-weight: 500;
     color: #000000;
     letter-spacing: 0.08em;
-    text-decoration: none;
+    text-decoration: underline;
 }
 
 .nav-link:hover {
