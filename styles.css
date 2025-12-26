@@ -93,8 +93,8 @@ ul {
 .fixed-image-panel {
     position: fixed;
     top: calc(var(--header-height) + 7px); /* Below header + border */
-    right: 10%; /* 10% margin from right edge */
-    width: 40%; /* 40% of viewport */
+    right: 8%; /* 8% margin from right edge */
+    width: 42%; /* 42% of viewport */
     height: calc(100vh - var(--header-height) - 7px);
     display: flex;
     align-items: flex-start;
@@ -112,8 +112,8 @@ ul {
 }
 
 .scroll-content {
-    margin-left: 10%; /* 10% margin from left edge */
-    width: 40%; /* 40% of viewport */
+    margin-left: 8%; /* 8% margin from left edge */
+    width: 42%; /* 42% of viewport */
     min-height: calc(100vh - var(--header-height) - 7px);
 }
 
@@ -128,9 +128,9 @@ ul {
     border-bottom: 7px solid var(--accent-pink);
     height: var(--header-height);
     width: 100%;
-    /* 4-column grid: 10% | 40% | 40% | 10% */
+    /* 4-column grid: 8% | 42% | 42% | 8% */
     display: grid;
-    grid-template-columns: 10% 40% 40% 10%;
+    grid-template-columns: 8% 42% 42% 8%;
     align-items: center;
 }
 
@@ -170,10 +170,11 @@ ul {
 }
 
 .nav-link {
-    font-family: var(--font-ui);
-    font-size: 14px;
-    color: var(--text-dark);
-    letter-spacing: 0.02em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #000000;
+    text-decoration: underline;
 }
 
 .nav-link:hover {
@@ -215,7 +216,7 @@ ul {
    Hero Section (#262626 background)
    ================================ */
 .hero {
-    padding: 40px 20px 20px;
+    padding: 60px 20px 20px;
     background-color: var(--bg-hero);
     overflow: visible;
     position: relative;
