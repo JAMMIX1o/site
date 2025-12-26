@@ -71,9 +71,8 @@ def build():
             shutil.copy2(src, DIST / item)
             print(f'  Copied: {item}')
 
-    # Create CNAME for custom domain
-    (DIST / 'CNAME').write_text('jammix.zerosnet.com', encoding='utf-8')
-    print('  Created: CNAME')
+    # Note: CNAME file is managed by repo owner, not auto-generated
+    # If custom domain is needed, create docs/CNAME manually
 
     print(f'\nBuild complete: {DIST}')
 

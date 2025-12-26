@@ -36,6 +36,10 @@ logs/
 # Analysis data (scraped from original site)
 analysis/
 
+# GitHub Pages CNAME (managed by repo owner)
+docs/CNAME
+CNAME
+
 # Node (if ever needed)
 node_modules/
 npm-debug.log*
