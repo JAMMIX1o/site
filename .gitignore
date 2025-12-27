@@ -49,3 +49,4 @@ npm-debug.log*
 .env.local
 .env.*.local
 __pycache__/
+images-original/
